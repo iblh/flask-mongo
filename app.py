@@ -5,9 +5,9 @@ import bcrypt
 app = Flask(__name__)
 
 app.secret_key = "testing"
-client = pymongo.MongoClient("mongodb://localhost:27017/explog")
-db = client.explog
-records = db.users
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client.database
+records = db.collection
 
 
 @app.route('/')
@@ -21,7 +21,6 @@ def index():
 
 @app.route("/signup", methods=['post', 'get'])
 def signup():
-    message = ''
     if "email" in session:
         return redirect(url_for("index"))
 
@@ -46,8 +45,7 @@ def signup():
             
             session['email'] = email
    
-            return redirect(url_for("index", email=email))
-            # return render_template('index.html', email=new_email)
+            return redirect(url_for("index"))
 
     return render_template('signup.html')
 
