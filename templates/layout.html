@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{% block title %}{%endblock %}</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="nav-item" href="/">Index</a>
+      <a class="nav-item" href="/login">Login</a>
+      <a class="nav-item" href="/signup">Signup</a>
+      <a class="nav-item" href="/signout">Signout</a>
+    </nav>
+
+    {% block content %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends "layout.html" %} 
+{% block title %}Index{% endblock %} 
+{% block content %}
+<div>
+  {% if message %}
+  <p>{{ message }}</p>
+  {% endif %}
+  {% if email %}
+  <p>Hello {{ email }}</p>
+  {% endif %} 
+  <p>Welcome to Flask</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Signup{% endblock %} 
+
+{%block content %} 
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+<form action="" method="post">
+  <div>
+    <label for="input_username">Username</label>
+    <input name="username" id="input_username" />
+  </div>
+
+  <div>
+    <label for="input_email">Email address</label>
+    <input name="email" id="input_email" />
+  </div>
+  
+  <div>
+    <label for="input_pwd">Password</label>
+    <input type="password" name="password" id="input_pwd" />
+  </div>
+  <button type="submit">Signup</button>
+</form>
+{% endblock %}
